@@ -9,7 +9,7 @@
     <div>${cell}</div>
 <div>
 */
-function parsecustomer(customer) {
+function parseCustomer(customer) {
     let profile = document.createElement("section");
     profile.style.display = "flex";
     profile.style.flexWrap = "none";
@@ -41,4 +41,4 @@ content.style.flexWrap = "wrap"
 Transforms customers.results into an array of html elements that is appended to
 container where all the profiles are stored
 */
-customers.results.map((e) => parsecustomer(e)).forEach((e) => content.appendChild(e))
+customers.results.map((e) => parseCustomer(e)).forEach((e) => content.appendChild(e))
