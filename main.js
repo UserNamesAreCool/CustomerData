@@ -1,13 +1,14 @@
-/* Prases customer and returns an html section containing the profile
-    <!-- customer Profile -->
-    <section>
-        <div>${picture}</div>
-        <div>${name}</div>
-        <div>${email}</div>
-        <div>${address}</div>
-        <div>${cell}</div>
-    </section>*/
-function parseCustomer(customer){
+/* Prases customer and returns an html div containing the profile
+<!-- customer Profile -->
+<div>
+    <div>${picture}</div>
+    <div>${name}</div>
+    <div>${email}</div>
+    <div>${address}</div>
+    <div>${cell}</div>
+<div>
+*/
+function parseCustomer(customer) {
     let profile = document.createElement("section");
     profile.style.display = "flex";
     profile.style.flexWrap = "none";
@@ -28,13 +29,15 @@ function parseCustomer(customer){
     ssn.innerText = customer.id.value
     Array.from([image, name, email, address, cell, ssn]).forEach((e) => profile.appendChild(e));
     return profile
-}
 
+}
 // Container where the customer's profile goes
 let content = document.querySelector("#content");
 content.style.display = "Flex";
 content.style.flexWrap = "wrap"
 
-/* Transforms customers.results into an array of html elements that is appended to
-    container where all the profiles are stored*/
-customers.results.map((e) => parsecustomer(e)).forEach((e) => content.appendChild(e))
+/*
+Transforms customers.results into an array of html elements that is appended to
+container where all the profiles are stored
+*/
+customers.results.map((e) => parseCustomer(e)).forEach((e) => content.appendChild(e))
